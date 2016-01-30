@@ -73,12 +73,13 @@ net_get_load_real(net_priv *c, struct net_stat *net)
         return -1;
     s++;
     if (sscanf(s,
-            "%lu  %*d     %*d  %*d  %*d  %*d   %*d        %*d       %lu",
+            "%llu %*d %*d %*d %*d %*d %*d %*d %lu",
             &net->rx, &net->tx)!= 2) {
         DBG("can't read %s statistics\n", c->iface);
         return -1;
     }
-    return 0;
+    if (! net->rx && ! net->tx) return -1; // to avoid second call per 2 second interval where net->rx and net->tx = 0. needs real fix
+    else return 0;
 }
 
 #elif defined(__FreeBSD__)

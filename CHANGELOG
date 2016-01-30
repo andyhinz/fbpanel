@@ -1,3 +1,10 @@
+7.0.x
+* net plugin: show receive rates and graph when reaching 4Gib+ numbers 
+* cpu plugin: Show graph of seperate CPUs / cores. 
+  config option: Cpu = 0 (total CPU usage), Cpu = 1 (CPU / core = 0), 
+  Cpu = 2 (CPU / core = 1) etc.
+
+
 6.2
 * 3367953: 'move to desktop' item in taskbar menu
 

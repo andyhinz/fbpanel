@@ -287,6 +287,7 @@ Plugin {
     type = cpu
     config {
         Color = green
+        Cpu = 0 # Cpu = 0 for total, Cpu = 1 for CPU / core 0, Cpu = 2 for CPU / core 1 etc.
     }
 }
 
